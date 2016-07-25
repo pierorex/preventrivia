@@ -145,7 +145,7 @@ REST_FRAMEWORK = {
         (
             'url_filter.integrations.drf.DjangoFilterBackend',
         ),
-    #Enable to remove unicode errors from the browse-able API
+    # Enable to remove unicode errors from the browse-able API
     # 'DEFAULT_RENDERER_CLASSES':
     #     (
     #         'rest_framework.renderers.JSONRenderer',
