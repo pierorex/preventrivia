@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-25 13:14+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: polls/apps.py:5 polls/models.py:15
+#, fuzzy
+#| msgid "Poll"
+msgid "Polls"
+msgstr "Encuestas"
+
+#: polls/models.py:8 polls/models.py:19
+msgid "Name"
+msgstr "Nombre"
+
+#: polls/models.py:14 polls/models.py:31
+msgid "Poll"
+msgstr "Encuesta"
+
+#: polls/models.py:25 polls/models.py:32 polls/models.py:73
+msgid "Category"
+msgstr "Categoria"
+
+#: polls/models.py:26
+#, fuzzy
+#| msgid "Category"
+msgid "Categories"
+msgstr "Categorias"
+
+#: polls/models.py:30 polls/models.py:43 polls/models.py:72
+msgid "Text"
+msgstr "Texto"
+
+#: polls/models.py:38 polls/models.py:45 polls/models.py:56
+msgid "Question"
+msgstr "Pregunta"
+
+#: polls/models.py:39
+#, fuzzy
+#| msgid "Question"
+msgid "Questions"
+msgstr "Preguntas"
+
+#: polls/models.py:44
+msgid "Value"
+msgstr "Valor"
+
+#: polls/models.py:51 polls/models.py:57
+msgid "Choice"
+msgstr "Opcion"
+
+#: polls/models.py:52
+#, fuzzy
+#| msgid "Choice"
+msgid "Choices"
+msgstr "Opciones"
+
+#: polls/models.py:58
+msgid "User"
+msgstr "Usuario"
+
+#: polls/models.py:60
+msgid "Date and time"
+msgstr "Fecha y hora"
+
+#: polls/models.py:67
+msgid "Answer"
+msgstr "Respuesta"
+
+#: polls/models.py:68
+msgid "Answers"
+msgstr "Respuestas"
+
+#: polls/models.py:74
+msgid "Score lower bound"
+msgstr "Cota inferior de puntaje"
+
+#: polls/models.py:80
+msgid "Recommendation"
+msgstr "Recomendacion"
+
+#: polls/models.py:81
+msgid "Recommendations"
+msgstr "Recomendaciones"
