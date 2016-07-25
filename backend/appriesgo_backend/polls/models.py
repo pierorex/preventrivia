@@ -80,3 +80,6 @@ class Recommendation(models.Model):
     class Meta:
         verbose_name = _('Recomendacion')
         verbose_name_plural = _('Recomendaciones')
+
+    def applies_to(self, score):
+        return score <= self.score_upper_bound
