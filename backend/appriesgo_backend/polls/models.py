@@ -17,21 +17,22 @@ class Category(models.Model):
         return "%s" % self.name
 
 
-class Choice(models.Model):
-    text = models.CharField(max_length=200)
-
-    def __str__(self):
-        return "Answer to question %d :: %s" % (self.question.pk, self.text)
-
-
 class Question(models.Model):
     text = models.CharField(max_length=300)
     poll = models.ForeignKey(Poll)
     category = models.ForeignKey(Category)
-    choices = models.ManyToManyField(Choice, related_name='questions')
 
     def __str__(self):
-        return "Question : %s" % self.text
+        return "%s" % self.text
+
+
+class Choice(models.Model):
+    text = models.CharField(max_length=200)
+    value = models.IntegerField()
+    question = models.ForeignKey(Question)
+
+    def __str__(self):
+        return "%s :: %s" % (self.question.text, self.text)
 
 
 class Answer(models.Model):
@@ -41,9 +42,8 @@ class Answer(models.Model):
     date_time = models.DateTimeField(default=datetime.datetime.now)
 
     def __str__(self):
-        return "Answer : %s %s %s" % (self.user.username,
-                                      self.question.text[:10],
-                                      self.choice.text[:10])
+        return "%s : %s : %s" % (self.user.username, self.question.text,
+                                 self.choice.text)
 
 
 class Recommendation(models.Model):
@@ -52,4 +52,4 @@ class Recommendation(models.Model):
     score_lower_bound = models.IntegerField()
 
     def __str__(self):
-        return "%s" % self.text[:20]
+        return "%s" % self.text
