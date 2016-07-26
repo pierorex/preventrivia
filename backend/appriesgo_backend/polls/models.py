@@ -39,10 +39,28 @@ class Question(models.Model):
         verbose_name_plural = _('Preguntas')
 
 
+class Recommendation(models.Model):
+    text = models.TextField(verbose_name=_('Texto'))
+    category = models.ForeignKey(Category, verbose_name=_('Categoria'))
+
+    def __str__(self):
+        return "%s" % self.text
+
+    class Meta:
+        verbose_name = _('Recomendacion')
+        verbose_name_plural = _('Recomendaciones')
+
+    def applies_to(self, score):
+        return score <= self.score_upper_bound
+
+
 class Choice(models.Model):
     text = models.CharField(max_length=200, verbose_name=_('Texto'))
     value = models.IntegerField(verbose_name=_('Valor'))
     question = models.ForeignKey(Question, verbose_name=_('Pregunta'))
+    recommendations = models.ManyToManyField(Recommendation,
+                                             blank=True,
+                                             verbose_name=_('Recomendaciones'))
 
     def __str__(self):
         return "%s :: %s" % (self.question.text, self.text)
@@ -68,18 +86,9 @@ class Answer(models.Model):
         verbose_name_plural = _('Respuestas')
 
 
-class Recommendation(models.Model):
+class Tip(models.Model):
     text = models.TextField(verbose_name=_('Texto'))
-    category = models.ForeignKey(Category, verbose_name=_('Categoria'))
-    score_upper_bound = models.IntegerField(verbose_name=
-                                            _('Cota supervior de puntaje'))
-
-    def __str__(self):
-        return "%s" % self.text
 
     class Meta:
-        verbose_name = _('Recomendacion')
-        verbose_name_plural = _('Recomendaciones')
-
-    def applies_to(self, score):
-        return score <= self.score_upper_bound
+        verbose_name = _('Tip')
+        verbose_name_plural = _('Tips')

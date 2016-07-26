@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Poll, Question, Category, Choice, Recommendation, Answer
+|from .models import Poll, Question, Category, Choice, Recommendation, Answer, \
+    Tip
 
 
 class ChoiceInline(admin.TabularInline):
@@ -16,3 +17,4 @@ admin.site.register(Question, QuestionAdmin)
 admin.site.register(Category)
 admin.site.register(Recommendation)
 admin.site.register(Answer)
+admin.site.register(Tip)

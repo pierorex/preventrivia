@@ -1,8 +1,9 @@
 from rest_framework import viewsets
-from .models import Poll, Question, Recommendation, Category, Choice, Answer
+from .models import Poll, Question, Recommendation, Category, Choice, Answer, \
+    Tip
 from .serializers import PollSerializer, QuestionSerializer, \
     RecommendationSerializer, CategorySerializer, ChoiceSerializer, \
-    AnswerSerializer
+    AnswerSerializer, TipSerializer
 
 
 class PollViewSet(viewsets.ModelViewSet):
@@ -33,3 +34,8 @@ class ChoiceViewSet(viewsets.ModelViewSet):
 class AnswerViewSet(viewsets.ModelViewSet):
     queryset = Answer.objects.all()
     serializer_class = AnswerSerializer
+
+
+class TipViewSet(viewsets.ModelViewSet):
+    queryset = Tip.objects.all()
+    serializer_class = TipSerializer

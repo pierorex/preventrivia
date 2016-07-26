@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Question, Poll, Choice, Answer, Category, Recommendation
+from .models import Question, Poll, Choice, Answer, Category, Recommendation, \
+    Tip
 
 
 class PollSerializer(serializers.ModelSerializer):
@@ -30,3 +31,8 @@ class CategorySerializer(serializers.ModelSerializer):
 class RecommendationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Recommendation
+
+
+class TipSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tip
