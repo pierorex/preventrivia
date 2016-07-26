@@ -3,7 +3,7 @@ import os
 import sys
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "appriesgo_backend.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "preventrivia_backend.settings")
 
     from django.core.management import execute_from_command_line
 

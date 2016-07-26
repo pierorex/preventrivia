@@ -53,7 +53,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.locale.LocaleMiddleware',
 ]
 
-ROOT_URLCONF = 'appriesgo_backend.urls'
+ROOT_URLCONF = 'preventrivia_backend.urls'
 
 TEMPLATES = [
     {
@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'appriesgo_backend.wsgi.application'
+WSGI_APPLICATION = 'preventrivia_backend.wsgi.application'
 
 
 # Database

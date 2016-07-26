@@ -1,5 +1,5 @@
 from django.contrib import admin
-|from .models import Poll, Question, Category, Choice, Recommendation, Answer, \
+from .models import Poll, Question, Category, Choice, Recommendation, Answer, \
     Tip
 
 

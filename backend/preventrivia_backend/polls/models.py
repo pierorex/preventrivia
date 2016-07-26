@@ -89,6 +89,9 @@ class Answer(models.Model):
 class Tip(models.Model):
     text = models.TextField(verbose_name=_('Texto'))
 
+    def __str__(self):
+        return "%s" % self.text
+
     class Meta:
         verbose_name = _('Tip')
         verbose_name_plural = _('Tips')
