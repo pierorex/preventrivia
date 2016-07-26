@@ -141,10 +141,10 @@ REST_FRAMEWORK = {
             'rest_framework.authentication.SessionAuthentication',
             'rest_framework.authentication.BasicAuthentication',
         ),
-    'DEFAULT_FILTER_BACKENDS':
-        (
-            'url_filter.integrations.drf.DjangoFilterBackend',
-        ),
+    #'DEFAULT_FILTER_BACKENDS':
+    #    (
+    #        'url_filter.integrations.drf.DjangoFilterBackend',
+    #    ),
     # Enable to remove unicode errors from the browse-able API
     # 'DEFAULT_RENDERER_CLASSES':
     #     (
