@@ -8,29 +8,32 @@ class PollSerializer(serializers.ModelSerializer):
         model = Poll
 
 
-class QuestionSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Question
-
-
 class AnswerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Answer
 
 
+class RecommendationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Recommendation
+
+
 class ChoiceSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Choice
+
+
+class QuestionSerializer(serializers.ModelSerializer):
+    choice_set = ChoiceSerializer(read_only=True, many=True)
+
+    class Meta:
+        model = Question
 
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-
-
-class RecommendationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Recommendation
 
 
 class TipSerializer(serializers.ModelSerializer):
