@@ -1,14 +1,16 @@
 angular.module('app.controllers', [])
   
-.controller('encuestaCtrl', function($scope) {
+.controller('pollCtrl', function($scope, Question) {
+  var questions = Question.query(function() {
+    console.log(questions);
+  });
+})
+   
+.controller('recommendationsCtrl', function($scope) {
 
 })
    
-.controller('recomendacionesCtrl', function($scope) {
-
-})
-   
-.controller('formaciNCtrl', function($scope) {
+.controller('formationCtrl', function($scope) {
 
 })
     

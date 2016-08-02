@@ -1,10 +1,9 @@
 angular.module('app.services', [])
 
-.factory('BlankFactory', [function(){
-
+.factory('Question', ['ApiUrl', '$resource', function(ApiUrl, $resource){
+  return $resource(ApiUrl + '/api/question/:id');
 }])
 
 .service('BlankService', [function(){
 
 }]);
-

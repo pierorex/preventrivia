@@ -10,32 +10,32 @@ angular.module('app.routes', [])
     
   
 
-      .state('tabsController.encuesta', {
+      .state('tabsController.poll', {
     url: '/poll',
     views: {
       'tab1': {
-        templateUrl: 'templates/encuesta.html',
-        controller: 'encuestaCtrl'
+        templateUrl: 'templates/poll.html',
+        controller: 'pollCtrl'
       }
     }
   })
 
-  .state('tabsController.recomendaciones', {
+  .state('tabsController.recommendations', {
     url: '/recommendations',
     views: {
       'tab2': {
-        templateUrl: 'templates/recomendaciones.html',
-        controller: 'recomendacionesCtrl'
+        templateUrl: 'templates/recommendations.html',
+        controller: 'recommendationsCtrl'
       }
     }
   })
 
-  .state('tabsController.formaciN', {
+  .state('tabsController.formation', {
     url: '/formation',
     views: {
       'tab3': {
-        templateUrl: 'templates/formaciN.html',
-        controller: 'formaciNCtrl'
+        templateUrl: 'templates/formation.html',
+        controller: 'formationCtrl'
       }
     }
   })
