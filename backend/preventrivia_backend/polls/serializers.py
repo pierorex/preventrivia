@@ -26,6 +26,7 @@ class ChoiceSerializer(serializers.ModelSerializer):
 
 class QuestionSerializer(serializers.ModelSerializer):
     choice_set = ChoiceSerializer(read_only=True, many=True)
+    category = serializers.StringRelatedField()
 
     class Meta:
         model = Question
