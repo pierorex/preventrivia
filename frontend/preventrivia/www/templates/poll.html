@@ -1,24 +1,36 @@
 <ion-view title="Encuesta" id="page2" class=" ">
     <ion-content padding="true" class="has-header">
         <div class="list card " id="encuesta-card23">
-            <h1 id="poll-heading2" style="color:#000000;" class=" ">{{ actual_question.category }}</h1>
-            <p id="poll-markdown1" style="color:#000000;" class=" ">{{ actual_question.text }}</p>
-            <div class="spacer" style="width: 300px; height: 110px;"></div>
+            <ion-item>
+                Pregunta
+                <span class="badge badge-positive">
+                    {{ actual_question.index + 1 }} / {{ questions.length }}
+                </span>
+            </ion-item>
+            <ion-item>
+                Categoría
+                <span class="item-note">{{ actual_question.category }}</span>
+            </ion-item>
+            <ion-item class="item-text-wrap">
+                <div class="item item-body">
+                    <p><h2>{{ actual_question.text }}</h2></p>
+                </div>
+                <label class="item item-select " id="poll-select1" name="choice">
+                    <span class="input-label">Seleccione</span>
+                    <select>
+                        <option ng-repeat="choice in actual_question.choice_set track by $index">
+                            {{ choice.text }}
+                        </option>
+                    </select>
+                </label>
+            </ion-item>
         </div>
-        <form id="poll-form1" class="list ">
-            <label class="item item-select " id="poll-select1" name="choice">
-                <span class="input-label">Seleccione</span>
-                <select>
-                    <option ng-repeat="choice in actual_question.choice_set track by $index">
-                        {{ choice.text }}
-                    </option>
-                </select>
-            </label>
-        </form>
+
         <button id="poll-button1" class=" button button-balanced  button-block"
                 ng-click="saveAnswer()">
             Guardar respuesta
         </button>
+
         <div id="poll-button-bar1" class=" button-bar ">
             <button id="poll-button1" class=" button button-positive  button-block"
                     ng-click="showPreviousQuestion()">
