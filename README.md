@@ -6,8 +6,9 @@ prevention systems.
 Built with Django (backend) and Ionic (frontend).
 ### Execution instructions:
   - git clone https://github.com/pierorex/preventrivia.git
-  - ##### Backend
+  - Backend
     ```
+    
     $ cd preventrivia/backend/preventrivia_backend
     
     $ pip3 install -r requirements.txt
@@ -19,11 +20,14 @@ Built with Django (backend) and Ionic (frontend).
     $ python manage.py migrate
     
     $ python manage.py loaddata fixtures
+
+    $ python manage.py runserver 0.0.0.0:8000
     
-    $ python manage.py serve 0.0.0.0:8000
+
     ```
   - Frontend
     ```
+    
     $ cd preventrivia/frontend/preventrivia
     
     $ install the ionic framework
