@@ -17,11 +17,8 @@
                 </div>
                 <label class="item item-select " id="poll-select1" name="choice">
                     <span class="input-label">Seleccione</span>
-                    <select>
-                        <option ng-repeat="choice in actual_question.choice_set track by $index">
-                            {{ choice.text }}
-                        </option>
-                    </select>
+                    <select ng-options="option.text for option in data.availableOptions track by option.id"
+                            ng-model="data.selectedOption"></select>
                 </label>
             </ion-item>
         </div>

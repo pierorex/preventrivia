@@ -1,4 +1,9 @@
-angular.module('app.services', [])
+angular.module('app.services', ['ngResource'])
+
+
+.config(function($resourceProvider) {
+  $resourceProvider.defaults.stripTrailingSlashes = false;
+})
 
 .factory('Question', ['ApiUrl', '$resource', function(ApiUrl, $resource){
   return $resource(ApiUrl + '/api/question/:id');
@@ -11,7 +16,12 @@ angular.module('app.services', [])
 .factory('Recommendation', ['ApiUrl', '$resource', function(ApiUrl, $resource){
   return $resource(ApiUrl + '/api/recommendation/:id');
 }])
-    
+
+.factory('Answer', ['ApiUrl', '$resource', function(ApiUrl, $resource){
+  return $resource(ApiUrl + '/api/answer/', {}, {
+    update: { method: 'PUT' }
+  });
+}])    
 .service('BlankService', [function(){
 
 }]);
