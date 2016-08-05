@@ -9,7 +9,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
                        'app.directives', 'ngResource'])
     
 // api url constant to link to backend server
-.constant('ApiUrl', 'http://127.0.0.1:8000')
+.constant('ApiUrl', 'http://localhost:8000')
     
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
