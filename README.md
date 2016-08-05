@@ -9,17 +9,25 @@ Built with Django (backend) and Ionic (frontend).
   - ##### Backend
     ```
     $ cd preventrivia/backend/preventrivia_backend
+    
     $ pip3 install -r requirements.txt
+    
     $ python manage.py migrate
+    
     $ python manage.py makemigrations polls
+    
     $ python manage.py migrate
+    
     $ python manage.py loaddata fixtures
+    
     $ python manage.py serve 0.0.0.0:8000
     ```
   - Frontend
     ```
     $ cd preventrivia/frontend/preventrivia
+    
     $ install the ionic framework
+    
     $ sh ionic-serve.sh
     ```
 Now you should be able to open http://localhost:8000/admin to enter the django administration
