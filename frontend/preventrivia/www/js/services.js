@@ -7,6 +7,10 @@ angular.module('app.services', [])
 .factory('Tip', ['ApiUrl', '$resource', function(ApiUrl, $resource){
   return $resource(ApiUrl + '/api/tip/:id');
 }])
+
+.factory('Recommendation', ['ApiUrl', '$resource', function(ApiUrl, $resource){
+  return $resource(ApiUrl + '/api/recommendation/:id');
+}])
     
 .service('BlankService', [function(){
 
