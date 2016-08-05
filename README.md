@@ -10,6 +10,7 @@ Built with Django (backend) and Ionic (frontend).
     ```
     $ cd preventrivia/backend/preventrivia_backend
     $ pip3 install -r requirements.txt
+    $ python manage.py loaddata fixtures
     $ python manage.py serve 0.0.0.0:8000
     ```
   - Frontend
