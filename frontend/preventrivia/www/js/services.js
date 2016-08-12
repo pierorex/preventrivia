@@ -18,10 +18,12 @@ angular.module('app.services', ['ngResource'])
 }])
 
 .factory('Answer', ['ApiUrl', '$resource', function(ApiUrl, $resource){
-  return $resource(ApiUrl + '/api/answer/', {}, {
-    update: { method: 'PUT' }
+  return $resource(ApiUrl + '/api/answer/:id/', {id: '@id'},
+  {
+    update: {method:'PUT'}
   });
-}])    
+}])
+
 .service('BlankService', [function(){
 
 }]);
