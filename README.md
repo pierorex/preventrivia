@@ -11,24 +11,24 @@ Built with Django (backend) and Ionic (frontend).
     
     $ cd preventrivia/backend/preventrivia_backend
     
-    $ pip3 install -r requirements.txt
+    $ sudo pip3 install -r requirements.txt
     
-    $ python manage.py migrate
+    $ python3 manage.py migrate
     
-    $ python manage.py makemigrations polls
+    $ python3 manage.py makemigrations polls
     
-    $ python manage.py migrate
+    $ python3 manage.py migrate
     
-    $ python manage.py loaddata fixtures
+    $ python3 manage.py loaddata fixtures
 
-    $ python manage.py runserver 0.0.0.0:8000
+    $ python3 manage.py runserver 0.0.0.0:8000
     
 
     ```
   - Frontend
     ```
     
-    $ cd preventrivia/frontend/preventrivia
+    $ cd preventrivia/frontend/
     
     $ install the ionic framework
     
