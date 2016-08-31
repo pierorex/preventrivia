@@ -18,18 +18,31 @@ class RecommendationSerializer(serializers.ModelSerializer):
         model = Recommendation
 
 
-class ChoiceSerializer(serializers.ModelSerializer):
-
+class SimpleChoiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Choice
 
 
 class QuestionSerializer(serializers.ModelSerializer):
-    choice_set = ChoiceSerializer(read_only=True, many=True)
+    choice_set = SimpleChoiceSerializer(read_only=True, many=True)
     category = serializers.StringRelatedField()
 
     class Meta:
         model = Question
+
+
+class SimpleQuestionSerializer(serializers.ModelSerializer):
+    category = serializers.StringRelatedField()
+    
+    class Meta:
+        model = Question
+
+
+class ChoiceSerializer(serializers.ModelSerializer):
+    question = SimpleQuestionSerializer()
+
+    class Meta:
+        model = Choice
 
 
 class CategorySerializer(serializers.ModelSerializer):
