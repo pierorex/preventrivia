@@ -55,18 +55,21 @@ class AnswerUserView(APIView):
     permission_classes = (AllowAny, )
 
     def post(self, request, *args, **kwargs):
-        print 'VIEW'
         try:
             user = request.data.get('user', None)
             question = request.data.get('question', None)
             try:
-                answerData = (Answer.objects.filter(user=user).filter(question=question))[0]
-                answerData = { 'id' : answerData.id, 'choice': answerData.choice.id}
+                answerData = (Answer.objects
+                                    .filter(user=user)
+                                    .filter(question=question))[0]
+                answerData = {'id': answerData.id,
+                              'choice': answerData.choice.id}
             except:
-                answerData = {'id' : -1, 'response': 'Answer does not exist'}
-            print answerData
+                answerData = {'id': -1,
+                              'response': 'Answer does not exist'}
+
             return Response(answerData, status.HTTP_200_OK)
-        except:  # User does not exist            
-            print 'FAIIIIILLLL'
+
+        except:  # User does not exist
             return Response({request},
                             status.HTTP_412_PRECONDITION_FAILED)
