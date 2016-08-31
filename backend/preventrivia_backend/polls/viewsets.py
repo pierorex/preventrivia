@@ -25,7 +25,10 @@ class RecommendationViewSet(viewsets.ModelViewSet):
     permission_classes = (AllowAny, )
     queryset = Recommendation.objects.all()
     serializer_class = RecommendationSerializer
-
+    
+    def get_queryset(self):
+        return self.request.user.profile.get_recommendations()
+        
 
 class CategoryViewSet(viewsets.ModelViewSet):
     permission_classes = (AllowAny, )
@@ -37,13 +40,13 @@ class ChoiceViewSet(viewsets.ModelViewSet):
     permission_classes = (AllowAny, )
     queryset = Choice.objects.all()
     serializer_class = ChoiceSerializer
-
+    
 
 class AnswerViewSet(viewsets.ModelViewSet):
     permission_classes = (AllowAny, )
     queryset = Answer.objects.all()
     serializer_class = AnswerSerializer
-
+        
 
 class TipViewSet(viewsets.ModelViewSet):
     permission_classes = (AllowAny, )
